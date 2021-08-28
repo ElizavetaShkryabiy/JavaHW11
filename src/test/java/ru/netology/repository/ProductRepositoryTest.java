@@ -11,6 +11,7 @@ class ProductRepositoryTest {
   private ProductRepository repository = new ProductRepository();
   private Book coreJava = new Book(1, "coreJava", 100, "Developers");
   private Book someBook = new Book(2, "someBook", 300, "Someone");
+  private Book someBook2 = new Book(2, "someBook", 300, "Someone");
   private Smartphone iPhone10 = new Smartphone(3, "iPhone10", 70_000, "Apple");
   private Smartphone samsung10 = new Smartphone(4, "samsung10", 50_000, "Samsung");
 
@@ -67,5 +68,7 @@ class ProductRepositoryTest {
     assertArrayEquals(expected, actual);
   }
 
-  
+
+
+
 }

@@ -2,6 +2,8 @@ package ru.netology.domain;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class SmartphoneTest {
     @Test
     public void shouldHaveAllFieldsAndMethodFromSuperClass() {
@@ -26,6 +28,33 @@ public class SmartphoneTest {
     public void shouldUseOverridedMethod() {
         Product product = new Smartphone();
         product.toString();
+    }
+
+    @Test
+    public void shouldUseOverridedHashCode() {
+        Product product = new Smartphone();
+        product.hashCode();
+    }
+
+    @Test
+    public void shouldUseOverridedEquals() {
+        Smartphone product = new Smartphone(2, "iPhone10", 300, "Apple");
+        Smartphone product2 = new Smartphone(2, "iPhone10", 300, "Apple");
+
+        assertEquals(product, product2);
+    }
+//    @Test
+//    public void shouldUseOverridedEqualsWhenSameProducts() {
+//        Smartphone product = new Smartphone(2, "iPhone10", 300, "");
+//        Smartphone product2 = new Smartphone(2, "iPhone10", 300, "");
+//
+//        assertEquals(product, product2);
+//    }
+
+    @Test
+    public void shouldSetAuthor(){
+        Product product = new Smartphone();
+        ((Smartphone) product).setManufacturer("Apple");
     }
 }
 

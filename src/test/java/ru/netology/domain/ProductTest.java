@@ -11,4 +11,41 @@ class ProductTest {
     Product second = new Product(1, "Java I", 1000);
     assertEquals(first, second);
   }
+
+  @Test
+  public void shouldUseOverridedMethod() {
+    Product product = new Product();
+    product.toString();
+  }
+
+  @Test
+  public void shouldUseOverridedHashCode() {
+    Product product = new Product();
+    product.hashCode();
+  }
+  @Test
+  public void shouldSetId() {
+    Product product = new Product();
+    product.setId(1);
+  }
+
+  @Test
+  public void shouldSetPrice() {
+    Product product = new Product();
+    product.setPrice(100);
+  }
+
+  @Test
+  public void shouldSetName() {
+    Product product = new Product();
+    product.setName("Name");
+  }
+
+  @Test
+  public void shouldGetPrice() {
+    Product product = new Product();
+    product.setPrice(100);
+    product.getPrice();
+  }
+
 }

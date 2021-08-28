@@ -29,4 +29,24 @@ class BookTest {
         Product product = new Book();
         product.toString();
     }
+
+    @Test
+    public void shouldUseOverridedHashCode() {
+        Product product = new Book();
+        product.hashCode();
+    }
+
+    @Test
+    public void shouldUseOverridedEquals() {
+        Book product = new Book(2, "someBook", 300, "Someone");
+        Book product2 = new Book(2, "someBook", 300, "Someone");
+
+        assertEquals(product, product2);
+    }
+
+    @Test
+    public void shouldSetAuthor(){
+        Product product = new Book();
+        ((Book) product).setAuthor("Someone");
+    }
 }

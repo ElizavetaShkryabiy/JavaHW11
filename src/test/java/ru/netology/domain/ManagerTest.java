@@ -14,6 +14,7 @@ public class ManagerTest {
     private Book someBook = new Book(2, "someBook", 300, "Someone");
     private Smartphone iPhone10 = new Smartphone(3, "iPhone10", 70_000, "Apple");
     private Smartphone samsung10 = new Smartphone(4, "samsung10", 50_000, "Samsung");
+    private Product toy = new Product(5,"dog", 250);
 
 
     @BeforeEach
@@ -22,12 +23,13 @@ public class ManagerTest {
         manager.add(someBook);
         manager.add(iPhone10);
         manager.add(samsung10);
+        manager.add(toy);
     }
 
     @Test
     public void shouldAddItemsInRepository() {
         Product[] actual = manager.findAll();
-        Product[] expected = new Product[]{coreJava, someBook, iPhone10, samsung10};
+        Product[] expected = new Product[]{coreJava, someBook, iPhone10, samsung10, toy};
         assertArrayEquals(expected, actual);
     }
 
@@ -59,4 +61,10 @@ public class ManagerTest {
         assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void shouldSearchByProductNotInSearchParameters() {
+        Product[] actual = manager.searchBy("dog");
+        Product[] expected = new Product[0];
+        assertArrayEquals(expected, actual);
+    }
 }
