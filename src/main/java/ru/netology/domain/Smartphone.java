@@ -27,8 +27,8 @@ public class Smartphone extends Product {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;
-    Smartphone shirt = (Smartphone) o;
-    return Objects.equals(manufacturer, shirt.manufacturer);
+    Smartphone smartphone = (Smartphone) o;
+    return Objects.equals(manufacturer, smartphone.manufacturer);
   }
 
   @Override
