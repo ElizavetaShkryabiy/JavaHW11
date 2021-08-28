@@ -45,6 +45,14 @@ class BookTest {
     }
 
     @Test
+    public void shouldUseOverridedEqualsWhenSameProduct() {
+        Book product = new Book(2, "someBook", 300, "Someone");
+        Book product2 = product;
+
+        assertEquals(product, product2);
+    }
+
+    @Test
     public void shouldSetAuthor(){
         Product product = new Book();
         ((Book) product).setAuthor("Someone");

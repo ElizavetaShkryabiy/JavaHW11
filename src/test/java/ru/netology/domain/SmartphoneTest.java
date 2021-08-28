@@ -43,13 +43,13 @@ public class SmartphoneTest {
 
         assertEquals(product, product2);
     }
-//    @Test
-//    public void shouldUseOverridedEqualsWhenSameProducts() {
-//        Smartphone product = new Smartphone(2, "iPhone10", 300, "");
-//        Smartphone product2 = new Smartphone(2, "iPhone10", 300, "");
-//
-//        assertEquals(product, product2);
-//    }
+    @Test
+    public void shouldUseOverridedEqualsWhenSameProduct() {
+        Smartphone product = new Smartphone(2, "iPhone10", 300, "");
+        Smartphone product2 = product;
+
+        assertEquals(product, product2);
+    }
 
     @Test
     public void shouldSetAuthor(){
