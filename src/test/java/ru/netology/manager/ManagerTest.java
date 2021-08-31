@@ -70,7 +70,7 @@ public class ManagerTest {
     @Test
     public void shouldSearchByProductNotInSearchParameters() {
         Product[] actual = manager.searchBy("dog");
-        Product[] expected = new Product[0];
+        Product[] expected = new Product[]{toy};
         assertArrayEquals(expected, actual);
     }
 
