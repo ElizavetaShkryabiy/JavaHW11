@@ -57,4 +57,22 @@ class BookTest {
         Product product = new Book();
         ((Book) product).setAuthor("Someone");
     }
+
+    @Test
+    public void shouldUseMatchesInNames() {
+        Book product = new Book(2, "someBook", 300, "Someone");
+        boolean actual = product.matches("someBook");
+        boolean expected = true;
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldUseMatchesInAuthor() {
+        Book product = new Book(2, "someBook", 300, "Someone");
+        boolean actual = product.matches("Someone");
+        boolean expected = true;
+        assertEquals(expected, actual);
+
+    }
 }

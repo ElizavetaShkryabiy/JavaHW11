@@ -56,5 +56,25 @@ public class SmartphoneTest {
         Product product = new Smartphone();
         ((Smartphone) product).setManufacturer("Apple");
     }
+
+    @Test
+    public void shouldUseMatchesInNames() {
+        Smartphone product = new Smartphone(2, "iPhone10", 300, "Apple");
+        boolean actual = product.matches("iPhone10");
+        boolean expected = true;
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldUseMatchesInManufacturer() {
+        Smartphone product = new Smartphone(2, "iPhone10", 300, "Apple");
+        boolean actual = product.matches("Apple");
+        boolean expected = true;
+        assertEquals(expected, actual);
+
+    }
+
+
 }
 
