@@ -60,8 +60,8 @@ class ProductTest {
     public void shouldUseMatches() {
         Product first = new Product(1, "Java I", 1000);
         boolean actual = first.matches("Java I");
-        boolean expected = true;
-        assertEquals(expected, actual);
+        
+        assertTrue(actual);
 
     }
 
